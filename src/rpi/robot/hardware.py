@@ -3,7 +3,7 @@ import pyfirmata
 
 
 class Motor:
-    def __init__(self, board, inA: int, inB: int, pwm: int):
+    def __init__(self, board: pyfirmata.ArduinoMega | pyfirmata.Arduino, inA: int, inB: int, pwm: int):
         self.inA = board.digital[inA]
         self.inB = board.digital[inB]
         self.pwm = board.digital[pwm]
@@ -28,17 +28,17 @@ class Motor:
 
 
 class Chassis:
-    def __init__(self, leftside: Motor, rightside: Motor, max_power=0.3, k=1.5):
-        self.left = leftside
-        self.right = rightside
+    def __init__(self, left_side: Motor, right_side: Motor, max_power=0.3, k=1.5):
+        self.left = left_side
+        self.right = right_side
         self.k = k
         self.statpower = max_power
 
     def direction(self, angle: float):
-        '''
+        """
         :param angle: float between -90 and 90
         :return: None
-        '''
+        """
         sp = self.statpower
         if angle < 0:
             lpower = sp - (sp * abs(angle) / 90 * self.k)

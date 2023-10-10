@@ -1,5 +1,5 @@
 import cv2
-import numpy as np
+# import numpy as np
 
 # dts = [10, 20, 30, 40, 50, 70, 90, 100, 110, 150, 170, 200]
 dts = [10, 20, 30, 40, 50, ]
@@ -16,8 +16,8 @@ cap = cv2.VideoCapture(0)
 
 while True:
     ret, image = cap.read()
-    cv2.imwrite('../tmp/tmp.png', image)
-    print(image.shape)
+    cv2.imwrite('../tmp/colored.png', image)
+    print("size:", image.shape)
     for i in dts:
         th = apply_dt(i, image)
         cv2.imwrite(f'../tmp/{i}.png', th)
