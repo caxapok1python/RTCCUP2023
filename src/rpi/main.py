@@ -7,6 +7,7 @@ while True:
     # robot = Robot('/dev/tty.usbmodem14201')  # with motors macbook
     robot = Robot('/dev/ttyUSB0')  # with motors rasbberry pi
 
+    # motors ports declaration
     robot.setup_motors((3, 7, 5), (2, 4, 6), max_power=0.6, k=7)
     robot.setup_camera(0)
     if int(sys.argv[1]) < 0:

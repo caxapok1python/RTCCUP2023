@@ -11,7 +11,7 @@ class Robot:
         self.right = None
         self.left = None
         self.board = pyfirmata.Arduino(serial)
-        print("Communication Successfully started")
+        print("[+] Communication Successfully started")
 
     def setup_motors(self, left: Tuple[int, int, int], right: Tuple[int, int, int], max_power=0.5, k=1.0):
         self.left = Motor(self.board, *left)
