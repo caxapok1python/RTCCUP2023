@@ -8,11 +8,6 @@
 // #include "gyro.h" // gyto library (no code)
 #include "automotive.h" // automatisation library
 
-#define CAM_SWITCHER_PORT 13
-// Servo cam_switcher;
-// cam switch 0-64, 65-123, 124-152
-const int cam_pos[] = {50, 100, 145};
-unsigned int cam = 0;
 
 // SETUP
 void setup(){
@@ -33,7 +28,6 @@ void setup(){
     setupMan(); // manipulator
     Serial.println("[+] Manipulator has been configurated!!");
     // setupGyro(); // gyro & acceleration
-    // cam_switcher.attach(CAM_SWITCHER_PORT);
 
 }
 

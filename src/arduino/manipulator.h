@@ -3,6 +3,7 @@
 #define LOW_SERVO 8
 #define MIDDLE_SERVO 9
 #define HIGH_SERVO 10
+#define CAM_SWITHER 13
 #define CAP A13
 
 
@@ -26,6 +27,7 @@ short int lowServoPos = 1, midServoPos = 1, highServoPos = 1;
 Servo lowServo;
 Servo midServo;
 Servo highServo;
+Servo camSwitch;
 
 // go to zero position
 void man2zero(){
@@ -56,6 +58,7 @@ void manCatch(bool flag){
 
 // setup manipulator
 void setupMan(){
+    camSwitch.attach(CAM_SWITHER);
     highServo.attach(LOW_SERVO);
     lowServo.attach(MIDDLE_SERVO);
     midServo.attach(HIGH_SERVO);
@@ -141,9 +144,15 @@ void controlMan(){
 
     // middle tumbler
     if (midTumbler < tumblerRange[0]){ // middle tumbler up
-        delay(50);
-        man2Pos(upPos);
-        return;
+        for (int i = 0; i < 200; i++){
+          Serial.println(i);
+          camSwitch.write(i);
+          delay(200);
+        }
+        // delay(50);
+        // man2Pos(upPos);
+        // return;
+
     }
 
     // mode tumbler
