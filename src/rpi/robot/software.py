@@ -75,7 +75,7 @@ class Camera:
                         thrsh1 = cv2.bitwise_not(thrsh1, np.ones(thrsh1.shape, thrsh1.dtype))
 
                         moments = cv2.moments(thrsh1)
-                    line_center = (int(moments["m10"] / moments["m00"]) + self.work_width*0.1, int(moments["m01"] / moments["m00"]))
+                    line_center = (int(moments["m10"] / moments["m00"]) + self.work_width*0.05, int(moments["m01"] / moments["m00"]))
                     callback(line_center)
                 # cv2.imshow("image", thrsh1)
                 key = cv2.waitKey(1) & 0xFF
