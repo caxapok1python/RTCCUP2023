@@ -40,13 +40,21 @@ def autoconf_dt(img):
 
 while True:
     ret, image = cap.read()
+    height, width, _ = image.shape
+    work_pos = 400
+    work_width = 245
+    work_height = 20
+    blur = 13
+    crop = image[work_pos:work_pos + work_height,
+           0 + int((width - work_width) / 2):width - int((width - work_width) / 2)]
+    crop = cv2.GaussianBlur(crop, (blur, blur), 0)
     cv2.imwrite("../tmp/colored.png", image)
-    print("size:", image.shape)
+    print("size:", crop.shape)
     for i in dts:
-        th = apply_dt(i, image)
+        th = apply_dt(i, crop)
         cv2.imwrite("../tmp/" + str(i) + ".png", th)
 
     dt = autoconf_dt(image)
-    th = apply_dt(dt, image)
+    th = apply_dt(dt, crop)
     cv2.imwrite("../tmp/autoconf_" + str(dt) + ".png", th)
     cv2.waitKey(1)
