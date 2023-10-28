@@ -35,7 +35,7 @@ class Camera:
         if dt < 0:
             _, img = self.cap.read()
             self.dt = self.autoconf_dt(img)
-            print(f"[+] AUTOCONFIGURATED DT: {self.dt}")
+            print("[+] AUTOCONFIGURATED DT: " + str(self.dt))
             return
         self.dt = dt
 
