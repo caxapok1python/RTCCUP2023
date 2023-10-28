@@ -42,11 +42,15 @@ void setup(){
 void loop(){
     // debug
     // testMan();
+    // debugJoystick();
+    // return;
     // calibrateSticks();
 
     // TODO: camera flip button
     // main
     // read joystic
+    readSticks(); // sticks
+    controlMotors(); // motors
     readJoyButton(); // button
     readTumblers(); // tumblers
     if (buttonLeft){ //stop motors if button pressed
@@ -54,16 +58,18 @@ void loop(){
         controlMotors(); // motors
         if (midTumbler > tumblerRange[1]) { // switch camera if mid tumbler pressed to low
             cam++;
+            Serial.print("cam: " );
+            Serial.println(cam % 3);
             cam_switcher.write(cam_pos[cam % 3]);
             //digitalWrite(CAM_SWITCHER_PORT, switchCameraStat);
         }
         return;
     }
-    readSticks(); // sticks
+    
     
 
     // control robot components
-    controlMotors(); // motors
+    
     controlMan(); // manipulator
     
 

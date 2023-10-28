@@ -20,5 +20,5 @@ while True:
     print("size:", image.shape)
     for i in dts:
         th = apply_dt(i, image)
-        cv2.imwrite(f'../tmp/{i}.png', th)
+        cv2.imwrite('../tmp/' + str(i) + '.png', th)
     cv2.waitKey(1)
