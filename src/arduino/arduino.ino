@@ -69,6 +69,6 @@ void loop(){
     
 
     // automotive
-    //checkAutomotive(); // check start for automotive
+    checkAutomotive(); // check start for automotive
 }
 

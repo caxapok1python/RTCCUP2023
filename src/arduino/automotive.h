@@ -60,12 +60,12 @@ void time_banka(){
 
 // check button and run automatic funcs
 void checkAutomotive(){
-  if (modeTumbler > tumblerRange[1]){
+  if (modeTumbler > tumblerRange[1]){ // mode thumbler down
     time_banka();
     delay(100);
   }
 
-  if (midTumbler > tumblerRange[1]){  // pressed left button
+  if (midTumbler > tumblerRange[1]){  // middle thembler down
     delay(50);
     // control Arduino from Raspberry PI
     runRPI(); 
