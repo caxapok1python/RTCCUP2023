@@ -147,10 +147,14 @@ void controlMan(){
 
     // middle tumbler
     if (midTumbler < tumblerRange[0]){ // middle tumbler up
-        Serial.print("cam: ");
-        Serial.println(cnt % 2);
-        camSwitch.write(camPose[cnt % 2]);
-        delay(100);
+        if (cnt % 2 == 1){
+          resetFunc();
+        }
+        else{
+          cnt++;
+          camSwitch.write(50);
+          delay(200);
+        }
         // for (int i = 0; i < 200; i++){
         //   Serial.println(i);
         //   camSwitch.write(i);
