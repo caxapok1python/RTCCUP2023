@@ -23,6 +23,9 @@ bool capState = false;
 
 short int lowServoPos = 1, midServoPos = 1, highServoPos = 1;
 
+const int camPose[2] = {50, 10};
+unsigned int cnt = 0;
+
 
 Servo lowServo;
 Servo midServo;
@@ -144,15 +147,18 @@ void controlMan(){
 
     // middle tumbler
     if (midTumbler < tumblerRange[0]){ // middle tumbler up
-        for (int i = 0; i < 200; i++){
-          Serial.println(i);
-          camSwitch.write(i);
-          delay(200);
-        }
+        Serial.print("cam: ");
+        Serial.println(cnt % 2);
+        camSwitch.write(camPose[cnt % 2]);
+        delay(100);
+        // for (int i = 0; i < 200; i++){
+        //   Serial.println(i);
+        //   camSwitch.write(i);
+        //   delay(200);
+        // }
         // delay(50);
         // man2Pos(upPos);
         // return;
-
     }
 
     // mode tumbler
