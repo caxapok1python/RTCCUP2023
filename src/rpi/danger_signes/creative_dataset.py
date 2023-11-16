@@ -22,6 +22,7 @@ def shot(name, cnt, image):
 
 
 def read_znak(name, num):
+    print(name)
     cnt = 0
     while cnt < num:
         ret, image = cam.read()
