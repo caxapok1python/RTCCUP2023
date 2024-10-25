@@ -52,15 +52,15 @@ void loop(){
     if (buttonLeft){ //stop motors if button pressed
         leftStick = rightStick = stickRange[2];
         controlMotors(); // motors
-        if (midTumbler > tumblerRange[1]) { // switch camera if mid tumbler pressed to low
-            cam++;
-            Serial.print("cam: " );
-            Serial.println(cam % 3);
-            analogWrite(CAM_SWITHER, camPose[cam % 3]);
-            // cam_switcher.write(cam_pos[cam % 3]);
-            // digitalWrite(CAM_SWITCHER_PORT, switchCameraStat);
-        }
-        return;
+        // if (midTumbler > tumblerRange[1]) { // switch camera if mid tumbler pressed to low
+        //     cam++;
+        //     Serial.print("cam: " );
+        //     Serial.println(cam % 3);
+        //     analogWrite(CAM_SWITHER, camPose[cam % 3]);
+        //     // cam_switcher.write(cam_pos[cam % 3]);
+        //     // digitalWrite(CAM_SWITCHER_PORT, switchCameraStat);
+        // }
+        // return;
     }
     
     
