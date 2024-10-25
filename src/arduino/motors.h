@@ -42,7 +42,7 @@ void setupMotors(){
 
 // convert joysick value to pwm forward
 short int forwardPwm(const short int val){
-    return map(val, stickRange[2], stickRange[1], 255, 0);
+    return map(val, stickRange[2], stickRange[1], 0, 255);
 }
 
 // convert joysick value to pwm backward
