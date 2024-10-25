@@ -12,7 +12,7 @@ class Robot:
         self.left = None
         self.board = pyfirmata.ArduinoMega(serial)
         layout = {
-            'digital' : tuple([3, 7, 22, 24]), 
+            'digital' : tuple(x for x in range(54)),
             'analog' : tuple(x for x in range(16)),
             'pwm' : tuple([5, 12]),
             'use_ports' : True,
