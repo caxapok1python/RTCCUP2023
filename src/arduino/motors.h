@@ -1,7 +1,7 @@
 // right motor pins
-#define RIGHT_A 2
-#define RIGHT_B 4
-#define RIGHT_PWM 6
+#define RIGHT_A 22
+#define RIGHT_B 24
+#define RIGHT_PWM 12
 
 // left motor pins
 #define LEFT_A 3
@@ -118,12 +118,12 @@ void setPower(bool left, const short int value){
         // Serial.println(pwm); // debug
         if (left){
             digitalWrite(LEFT_A, HIGH);
-            digitalWrite(LEFT_B, HIGH);
+            digitalWrite(LEFT_B, LOW);
             analogWrite(LEFT_PWM, pwm);
             return;
         }
         digitalWrite(RIGHT_A, HIGH);
-        digitalWrite(RIGHT_B, HIGH);
+        digitalWrite(RIGHT_B, LOW);
         analogWrite(RIGHT_PWM, pwm);
         return;
     }
@@ -132,14 +132,14 @@ void setPower(bool left, const short int value){
         const short int pwm = backwardPwm(value);
         // Serial.print(-pwm); // debug
         if (left){
-            digitalWrite(LEFT_A, HIGH);
-            digitalWrite(LEFT_B, LOW);
+            digitalWrite(LEFT_A, LOW);
+            digitalWrite(LEFT_B, HIGH);
             analogWrite(LEFT_PWM, pwm);
             return;
         }
         else{
-            digitalWrite(RIGHT_A, HIGH);
-            digitalWrite(RIGHT_B, LOW);
+            digitalWrite(RIGHT_A, LOW);
+            digitalWrite(RIGHT_B, HIGH);
             analogWrite(RIGHT_PWM, pwm);
             return;
         }
