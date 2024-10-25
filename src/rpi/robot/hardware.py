@@ -12,12 +12,12 @@ class Motor:
     def set_power(self, power: float):
         if power == 0:
             self.inA.write(0)
-            self.inB.write(1)
+            self.inB.write(0)
             self.pwm.write(0)
             return
         elif power > 0:
             power = abs(power)
-            self.inA.write(1)
+            self.inA.write(0)
             self.inB.write(1)
             self.pwm.write(power)
             return
