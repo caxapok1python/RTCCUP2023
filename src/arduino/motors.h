@@ -1,7 +1,7 @@
 // right motor pins
-#define RIGHT_A 22
-#define RIGHT_B 24
-#define RIGHT_PWM 12
+#define RIGHT_A 2
+#define RIGHT_B 4
+#define RIGHT_PWM 6
 
 // left motor pins
 #define LEFT_A 3
