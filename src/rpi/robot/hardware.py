@@ -17,13 +17,13 @@ class Motor:
             return
         elif power > 0:
             power = abs(power)
-            self.inA.write(0)
-            self.inB.write(1)
+            self.inA.write(1)
+            self.inB.write(0)
             self.pwm.write(power)
             return
         power = abs(power)
-        self.inA.write(1)
-        self.inB.write(0)
+        self.inA.write(0)
+        self.inB.write(1)
         self.pwm.write(power)
 
 
