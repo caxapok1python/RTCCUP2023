@@ -11,6 +11,14 @@ class Robot:
         self.right = None
         self.left = None
         self.board = pyfirmata.ArduinoMega(serial)
+        layout = {
+            'digital' : tuple(3, 7, 22, 24), # type: ignore
+            'analog' : tuple(x for x in range(16)),
+            'pwm' : tuple(5, 12),
+            'use_ports' : True,
+            'disabled' : (0, 1, 14, 15) # Rx, Tx, Crystal
+         }
+        self.board.setup_layout(layout)
         print("[+] Communication Successfully started")
 
     def setup_motors(self, left: Tuple[int, int, int], right: Tuple[int, int, int], max_power=0.5, k=1.0):
