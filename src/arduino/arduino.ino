@@ -9,6 +9,8 @@
 #include "automotive.h" // automatisation library
 
 
+int cam = 0;
+
 // SETUP
 void setup(){
     setupRescure(); // setup sercure reset pin
@@ -54,7 +56,7 @@ void loop(){
             cam++;
             Serial.print("cam: " );
             Serial.println(cam % 3);
-            analogWrite(CAM_SWITCHER_PORT, cam_pos[cam % 3]);
+            analogWrite(CAM_SWITHER, camPose[cam % 3]);
             // cam_switcher.write(cam_pos[cam % 3]);
             // digitalWrite(CAM_SWITCHER_PORT, switchCameraStat);
         }
