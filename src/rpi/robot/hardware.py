@@ -3,7 +3,7 @@ import pyfirmata
 
 
 class Motor:
-    def __init__(self, board: pyfirmata.Arduino, inA: int, inB: int, pwm: int):
+    def __init__(self, board: pyfirmata.ArduinoMega, inA: int, inB: int, pwm: int):
         self.inA = board.digital[inA]
         self.inB = board.digital[inB]
         self.pwm = board.digital[pwm]
