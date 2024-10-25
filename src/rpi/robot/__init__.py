@@ -10,7 +10,7 @@ class Robot:
         self.chassis = None
         self.right = None
         self.left = None
-        self.board = pyfirmata.Arduino(serial)
+        self.board = pyfirmata.ArduinoMega(serial)
         print("[+] Communication Successfully started")
 
     def setup_motors(self, left: Tuple[int, int, int], right: Tuple[int, int, int], max_power=0.5, k=1.0):
