@@ -110,6 +110,7 @@ class Camera:
                     line_center = (int(moments["m10"] / moments["m00"]), int(moments["m01"] / moments["m00"]))
                     callback(line_center)
                 # cv2.imshow("image", thrsh1)
+                cv2.imwrite("../tmp/work_line.png", thrsh1)
                 key = cv2.waitKey(1) & 0xFF
             except KeyboardInterrupt:
                 break
