@@ -147,15 +147,14 @@ void controlMan(){
 
     // middle tumbler
     if (midTumbler < tumblerRange[0]){ // middle tumbler up change camera
-        camCur++;
-        camSwitch.write(camPose[camCur % 2]);
-        delay(200);
-        
-        // for (int i = 0; i < 200; i++){
-        //   Serial.println(i);
-        //   camSwitch.write(i);
-        //   delay(200);
-        // }
+        // camCur++;
+        // camSwitch.write(camPose[camCur % 2]);
+        // delay(200);
+        for (int i = 0; i < 200; i++){
+          Serial.println(i);
+          camSwitch.write(i);
+          delay(200);
+        }
     }
 
     // mode tumbler
