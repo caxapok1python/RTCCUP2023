@@ -150,12 +150,12 @@ void controlMan(){
         camCur++;
         camSwitch.write(camPose[camCur % 2]);
         delay(200);
-        for (int i = 0; i < 400; i++){
+        for (int i = 0; i < 1200; i++){
         //   i = min(255, i);
           Serial.println(i);
         //   analogWrite(CAM_SWITHER, i);
           camSwitch.write(i);
-          delay(100);
+          delay(150);
         }
     }
 
