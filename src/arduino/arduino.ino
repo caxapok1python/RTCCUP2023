@@ -52,6 +52,9 @@ void loop(){
     if (buttonLeft){ //stop motors if button pressed
         leftStick = rightStick = stickRange[2];
         controlMotors(); // motors
+        if (midTumbler < tumblerRange[0]){ // middle tumbler up
+            resetFunc();
+        }
         // if (midTumbler > tumblerRange[1]) { // switch camera if mid tumbler pressed to low
         //     cam++;
         //     Serial.print("cam: " );
